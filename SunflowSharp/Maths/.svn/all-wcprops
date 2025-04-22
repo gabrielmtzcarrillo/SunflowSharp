@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths
+END
+MathUtils.cs
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/MathUtils.cs
+END
+Point2.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/Point2.cs
+END
+Point3.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/Point3.cs
+END
+PerlinVector.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/PerlinVector.cs
+END
+Solvers.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/Solvers.cs
+END
+BoundingBox.cs
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/BoundingBox.cs
+END
+PerlinScalar.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/PerlinScalar.cs
+END
+QMC.cs
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/QMC.cs
+END
+Vector3.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/Vector3.cs
+END
+OrthoNormalBasis.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/OrthoNormalBasis.cs
+END
+Matrix4.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/SunflowSharp/Maths/Matrix4.cs
+END

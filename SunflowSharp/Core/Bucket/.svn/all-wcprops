@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket
+END
+RowBucketOrder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/RowBucketOrder.cs
+END
+BucketOrderFactory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/BucketOrderFactory.cs
+END
+HilbertBucketOrder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/HilbertBucketOrder.cs
+END
+SpiralBucketOrder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/SpiralBucketOrder.cs
+END
+ColumnBucketOrder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/ColumnBucketOrder.cs
+END
+DiagonalBucketOrder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/DiagonalBucketOrder.cs
+END
+InvertedBucketOrder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/InvertedBucketOrder.cs
+END
+RandomBucketOrder.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Bucket/RandomBucketOrder.cs
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/trunk/SunflowSharp/Image
+END
+Color.cs
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/Color.cs
+END
+IrregularSpectralCurve.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/IrregularSpectralCurve.cs
+END
+SpectralCurve.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/SpectralCurve.cs
+END
+ChromaticitySpectrum.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/ChromaticitySpectrum.cs
+END
+RegularSpectralCurve.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/RegularSpectralCurve.cs
+END
+RGBSpace.cs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/RGBSpace.cs
+END
+XYZColor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/XYZColor.cs
+END
+ConstantSpectralCurve.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/ConstantSpectralCurve.cs
+END
+Bitmap.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/Bitmap.cs
+END
+BlackbodySpectrum.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/SunflowSharp/Image/BlackbodySpectrum.cs
+END

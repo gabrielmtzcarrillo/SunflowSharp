@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive
+END
+ParticleSurface.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/ParticleSurface.cs
+END
+Torus.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/Torus.cs
+END
+BanchoffSurface.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/BanchoffSurface.cs
+END
+Background.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/Background.cs
+END
+Plane.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/Plane.cs
+END
+JuliaFractal.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/JuliaFractal.cs
+END
+TriangleMesh.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/TriangleMesh.cs
+END
+Hair.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/Hair.cs
+END
+CubeGrid.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/CubeGrid.cs
+END
+Sphere.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/Sphere.cs
+END
+QuadMesh.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/QuadMesh.cs
+END
+CornellBox.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/CornellBox.cs
+END
+Box.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/SunflowSharp/Core/Primitive/Box.cs
+END
