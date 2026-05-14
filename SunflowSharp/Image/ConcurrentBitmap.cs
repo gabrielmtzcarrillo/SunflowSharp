@@ -1,7 +1,5 @@
 using System;
 using System.Threading;
-using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace SunflowSharp.Image
 {
@@ -87,46 +85,6 @@ namespace SunflowSharp.Image
                 }
             }
             return result;
-        }
-
-        /// <summary>
-        /// Resolves the concurrent buffer into a System.Drawing.Bitmap.
-        /// Applies simple gamma correction (sRGB).
-        /// </summary>
-        public System.Drawing.Bitmap ToSystemBitmap()
-        {
-            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(width, height, PixelFormat.Format32bppArgb);
-            BitmapData bmpData = bmp.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-
-            unsafe
-            {
-                byte* ptr = (byte*)bmpData.Scan0;
-                for (int y = 0; y < height; y++)
-                {
-                    // Systems.Drawing uses (0,0) as top-left. Sunflow typically uses bottom-left for y=0.
-                    // We'll follow Sunflow's convention and flip here for system display.
-                    int targetY = height - 1 - y;
-                    byte* row = ptr + (targetY * bmpData.Stride);
-                    
-                    for (int x = 0; x < width; x++)
-                    {
-                        int srcOffset = (y * width + x) * 3;
-                        
-                        // Convert to sRGB and clamp
-                        byte r = (byte)Math.Clamp(RGBSpace.SRGB.gammaCorrect(data[srcOffset + 0]) * 255f, 0, 255);
-                        byte g = (byte)Math.Clamp(RGBSpace.SRGB.gammaCorrect(data[srcOffset + 1]) * 255f, 0, 255);
-                        byte b = (byte)Math.Clamp(RGBSpace.SRGB.gammaCorrect(data[srcOffset + 2]) * 255f, 0, 255);
-
-                        row[x * 4 + 0] = b;
-                        row[x * 4 + 1] = g;
-                        row[x * 4 + 2] = r;
-                        row[x * 4 + 3] = 255; // Alpha
-                    }
-                }
-            }
-
-            bmp.UnlockBits(bmpData);
-            return bmp;
         }
     }
 }

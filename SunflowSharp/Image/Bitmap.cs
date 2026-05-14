@@ -274,21 +274,8 @@ namespace SunflowSharp.Image
             }
             else
             {
-                // regular image, load using Java api
-                //BufferedImage bi = ImageIO.read(new File(filename));
-                System.Drawing.Bitmap bi = new System.Drawing.Bitmap(filename);
-                width = bi.Width;
-                height = bi.Height;
-                isHDR = false;
-                pixels = new int[width * height];
-                for (int y = 0, index = 0; y < height; y++)
-                {
-                    for (int x = 0; x < width; x++, index++)
-                    {
-                        int rgb = bi.GetPixel(x, height - 1 - y).ToArgb();
-                        pixels[index] = isLinear ? rgb : RGBSpace.SRGB.rgbToLinear(rgb);
-                    }
-                }
+                // System.Drawing removed. Fallback to placeholder via exception.
+                throw new NotSupportedException($"Image format for '{filename}' is not supported without System.Drawing. Use TGA or HDR, or use the FreeImage backend.");
             }
         }
 
