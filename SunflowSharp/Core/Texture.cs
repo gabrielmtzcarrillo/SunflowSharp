@@ -40,11 +40,12 @@ namespace SunflowSharp.Core
                     UI.printInfo(UI.Module.TEX, "Reading texture bitmap from: \"{0}\" ...", filename);
                     bitmap = new Bitmap(filename, isLinear);
                     if (bitmap.Width == 0 || bitmap.Height == 0)
-                        bitmap = null;
+                        throw new Exception("Invalid bitmap dimensions");
                 }
                 catch (Exception e)
                 {
-                    UI.printError(UI.Module.TEX, "{0}", e);
+                    UI.printError(UI.Module.TEX, "Failed to load texture \"{0}\": {1}. Using placeholder.", filename, e.Message);
+                    bitmap = Bitmap.CreateErrorPlaceholder(64);
                 }
                 loaded = 1;
             }

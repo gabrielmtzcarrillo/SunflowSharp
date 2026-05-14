@@ -468,5 +468,20 @@ namespace SunflowSharp.Image
                 Console.WriteLine(ex);
             }
         }
+
+        public static Bitmap CreateErrorPlaceholder(int size)
+        {
+            Bitmap b = new Bitmap(size, size, false);
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    // Magenta/Black checkerboard
+                    bool magenta = ((x / (size / 8)) % 2 == (y / (size / 8)) % 2);
+                    b.setPixel(x, y, magenta ? new Color(1, 0, 1) : Color.BLACK);
+                }
+            }
+            return b;
+        }
     }
 }
