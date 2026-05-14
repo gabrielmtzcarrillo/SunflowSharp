@@ -1,38 +1,70 @@
-# SunflowSharp
+# SunflowSharp (.NET 10 Modernized)
 
-**SunflowSharp** is a C# port of the original [Sunflow](https://sunflow.sourceforge.net/) renderer.  
+**SunflowSharp** is a modern C# port and evolution of the original [Sunflow](https://sunflow.sourceforge.net/) renderer, fully upgraded for **.NET 10**.
 
-This project aims to modernize Sunflow’s CPU-based ray tracing engine in C# for experimentation, learning, and long-term development.
+This project aims to provide a high-performance, experimentation-friendly ray tracing engine in C#, leveraging the latest language features and GPU acceleration capabilities.
 
 ![Render Sample](render.png)
 
-## Status
+## 🚀 Modernization Features (.NET 10)
 
-This repository is currently under **long-term maintenance**. While active development may be gradual, contributions and suggestions are welcome.
+The engine has been significantly overhauled to support modern development workflows:
 
-### Important Notes
-- The original project was previously hosted via SVN and is now fully migrated to GitHub.
-- Any legacy SVN references or metadata have been removed as of this migration.
+- **Target Framework**: Migrated to `net10.0` for all core libraries and tools.
+- **SDK-Style Projects**: Clean, modern project files with easy dependency management.
+- **GPU Ready (ILGPU)**: Integrated **ILGPU** and **ILGPU.Algorithms**, establishing the foundation for offloading ray-primitive intersections and kernels to the GPU (CUDA/OpenCL/CPU fallback).
+- **Thread Safety**: Implemented `ConcurrentBitmap`, a high-precision `float` buffer with atomic accumulation using `Interlocked` primitives, ensuring safe multi-threaded and GPU-driven rendering.
+- **Robustness**: 
+  - Added a **Magenta/Black Checkerboard Placeholder** for missing or corrupt texture assets.
+  - Replaced obsolete/unsupported APIs (e.g., `Thread.Abort`) with modern alternatives.
+- **Clean Code**: Enabled **Nullable Reference Types** (`<Nullable>enable</Nullable>`) across the solution to improve runtime stability.
 
-## Goals
+## 🛠 Getting Started
 
-- Provide a clean and modern C# implementation of a ray tracing engine.
-- Serve as a base for further research in rendering techniques.
+### Prerequisites
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
-## Getting Started
+### Installation
+```bash
+git clone https://github.com/gabrielmtzcarrillo/SunflowSharp.git
+cd SunflowSharp
+```
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/gabrielmtzcarrillo/SunflowSharp.git
-   ```
+### Building the Solution
+```bash
+dotnet build SunflowSharp.sln
+```
 
-2. Open in Visual Studio or your preferred C# IDE.
+## 📖 Usage Examples
 
-3. Build and run the renderer (console-based interface, scene loading from file system).
+### CLI Rendering
+You can render scenes directly from the command line using the Test project. The renderer supports `.sc` and compressed `.sc.gz` scene formats.
 
-## License
+```bash
+# Render a demo scene (CLI)
+dotnet run --project SunflowSharp.Test/SunflowSharp.Test.csproj -- examples/julia.sc.gz
 
-This project follows the same licensing model as the original Sunflow (GPL or similar). See LICENSE for details.
+# Render a demo scene with specific texture paths
+dotnet run --project SunflowSharp.Test/SunflowSharp.Test.csproj -- examples/bump_demo.sc.gz
+```
 
-Maintained by Gabriel Mtz Carrillo
-Repository migrated and maintained with future improvements in mind.
+### Windows GUI (WinForms)
+The GUI project has been modernized to run as a .NET 10 Windows application.
+
+```bash
+dotnet run --project SunflowSharp.Gui/SunflowSharp.Gui.csproj
+```
+
+## 🏗 Project Structure
+
+- **SunflowSharp**: Core rendering engine logic (Acceleration structures, Shaders, Geometry).
+- **SunflowSharp.FreeImage**: High-performance image saving/loading backend.
+- **SunflowSharp.Gui**: Windows-based interactive preview tool.
+- **SunflowSharp.Test**: Command-line interface for batch rendering and testing.
+
+## ⚖ License
+
+This project follows the same licensing model as the original Sunflow (GPL or similar). See `LICENSE` for details.
+
+---
+*Maintained by Gabriel Mtz Carrillo and modernized for the .NET 10 era.*
