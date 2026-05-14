@@ -96,6 +96,8 @@ namespace SunflowSharp.Core.Renderer
                 while (true)
                 {
                     int n = renderer.progressiveRenderNext(istate);
+                    if (n == 0 && UI.taskCanceled())
+                        return;
                     lock (renderer)// synchronized (ProgressiveRenderer.this) {
                     {
                         if (renderer.counter >= renderer.counterMax)
@@ -127,11 +129,16 @@ namespace SunflowSharp.Core.Renderer
         private int progressiveRenderNext(IntersectionState istate)
         {
             int TASK_SIZE = 16;
-            SmallBucket first = smallBucketQueue.Count > 0 ? smallBucketQueue.Dequeue() : null;
+            SmallBucket? first;
+            bool useMask;
+            lock (smallBucketQueue!)
+            {
+                first = smallBucketQueue.Count > 0 ? smallBucketQueue.Dequeue() : null;
+                useMask = smallBucketQueue.Count != 0;
+            }
             if (first == null)
                 return 0;
             int ds = first.size / TASK_SIZE;
-            bool useMask = smallBucketQueue.Count != 0;
             int mask = 2 * first.size / TASK_SIZE - 1;
             int pixels = 0;
             for (int i = 0, y = first.y; i < TASK_SIZE && y < imageHeight; i++, y += ds)
@@ -141,15 +148,15 @@ namespace SunflowSharp.Core.Renderer
                     // check to see if this is a pixel from a higher level tile
                     if (useMask && (x & mask) == 0 && (y & mask) == 0)
                         continue;
-                    int instance = (x & (sigma.Length - 1)) * sigma.Length + sigma[y & (sigma.Length - 1)];
+                    int instance = (x & (sigma!.Length - 1)) * sigma.Length + sigma[y & (sigma.Length - 1)];
                     double time = QMC.halton(1, instance);
                     double lensU = QMC.halton(2, instance);
                     double lensV = QMC.halton(3, instance);
-                    ShadingState state = scene.getRadiance(istate, x, imageHeight - 1 - y, lensU, lensV, time, instance);
+                    ShadingState? state = scene!.getRadiance(istate, x, imageHeight - 1 - y, lensU, lensV, time, instance);
                     Color c = state != null ? state.getResult() : Color.BLACK;
                     pixels++;
                     // fill region
-                    display.imageFill(x, y, Math.Min(ds, imageWidth - x), Math.Min(ds, imageHeight - y), c);
+                    display!.imageFill(x, y, Math.Min(ds, imageWidth - x), Math.Min(ds, imageHeight - y), c);
                 }
             }
             if (first.size >= 2 * TASK_SIZE)
@@ -169,7 +176,8 @@ namespace SunflowSharp.Core.Renderer
                                 b.y = first.y + i * size;
                                 b.size = size;
                                 b.constrast = 1.0f / size;
-                                smallBucketQueue.Enqueue(b);
+                                lock (smallBucketQueue)
+                                    smallBucketQueue.Enqueue(b);
                             }
                         }
                     }
@@ -184,8 +192,9 @@ namespace SunflowSharp.Core.Renderer
             public int x, y, size;
             public float constrast;
 
-            public int CompareTo(SmallBucket o)
+            public int CompareTo(SmallBucket? o)
             {
+                if (o == null) return 1;
                 if (constrast < o.constrast)
                     return -1;
                 if (constrast == o.constrast)

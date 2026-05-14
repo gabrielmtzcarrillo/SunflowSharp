@@ -8,6 +8,7 @@ using SunflowSharp.Core.Renderer;
 using SunflowSharp.Image;
 using SunflowSharp.Maths;
 using SunflowSharp.Systems;
+using Timer = SunflowSharp.Systems.Timer;
 
 namespace SunflowSharp
 {

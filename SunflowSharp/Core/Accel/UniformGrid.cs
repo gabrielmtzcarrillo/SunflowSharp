@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SunflowSharp.Core;
 using SunflowSharp.Maths;
 using SunflowSharp.Systems;
+using Timer = SunflowSharp.Systems.Timer;
 
 namespace SunflowSharp.Core.Accel
 {

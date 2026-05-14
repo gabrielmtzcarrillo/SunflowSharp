@@ -212,11 +212,6 @@ namespace SunflowSharp.Core.Renderer
                 thread.Start();
             }
 
-            public void stop()
-            {
-                thread.Abort();
-            }
-
             public void join()
             {
                 thread.Join();
