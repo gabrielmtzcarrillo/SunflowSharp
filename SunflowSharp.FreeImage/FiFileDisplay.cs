@@ -16,14 +16,10 @@ namespace SunflowSharp.FreeImage
 
         public override void imageEnd()
         {
-            using (Bitmap b = new Bitmap(bitmap.Width, bitmap.Height))
+            if (filename == null || concurrentBitmap == null) return;
+            
+            using (Bitmap b = concurrentBitmap.ToSystemBitmap())
             {
-                for (int i = 0; i < b.Width; i++)
-                    for (int j = 0; j < b.Height; j++)
-                    {
-                        SunflowSharp.Image.Color c = bitmap.getPixel(i, b.Height - j);
-                        b.SetPixel(i, j, Color.FromArgb((int)(c.r * 255), (int)(c.g * 255), (int)(c.b * 255)));
-                    }
                 using (MemoryStream stream = new MemoryStream())
                 {
                     b.Save(stream, System.Drawing.Imaging.ImageFormat.Bmp);
@@ -37,3 +33,4 @@ namespace SunflowSharp.FreeImage
         }
     }
 }
+

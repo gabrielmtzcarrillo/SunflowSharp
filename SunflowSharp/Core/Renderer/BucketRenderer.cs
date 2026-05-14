@@ -13,6 +13,7 @@ namespace SunflowSharp.Core.Renderer
     {
         private Scene scene;
         private IDisplay display;
+        private ConcurrentBitmap concurrentBitmap;
         // resolution
         private int imageWidth;
         private int imageHeight;
@@ -136,6 +137,7 @@ namespace SunflowSharp.Core.Renderer
         public void render(IDisplay display)
         {
             this.display = display;
+            concurrentBitmap = new ConcurrentBitmap(imageWidth, imageHeight);
             display.imageBegin(imageWidth, imageHeight, bucketSize);
             // set members variables
             bucketCounter = 0;
@@ -334,6 +336,13 @@ namespace SunflowSharp.Core.Renderer
                 }
             }
             // update pixels
+            for (int j = 0, index = 0; j < bh; j++)
+            {
+                for (int i = 0; i < bw; i++, index++)
+                {
+                    concurrentBitmap.SetPixel(x0 + i, imageHeight - 1 - (y0 + j), bucketRGB[index]);
+                }
+            }
             display.imageUpdate(x0, y0, bw, bh, bucketRGB);
         }
 
