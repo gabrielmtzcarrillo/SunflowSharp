@@ -48,8 +48,8 @@ dotnet run --project SunflowSharp.Test/SunflowSharp.Test.csproj -- examples/juli
 dotnet run --project SunflowSharp.Test/SunflowSharp.Test.csproj -- examples/bump_demo.sc.gz
 ```
 
-### Windows GUI (WinForms)
-The GUI project has been modernized to run as a .NET 10 Windows application.
+### Windows GUI (WinUI 3)
+The GUI project now runs as a WinUI 3 desktop application on .NET 10 and Windows App SDK.
 
 ```bash
 dotnet run --project SunflowSharp.Gui/SunflowSharp.Gui.csproj
@@ -59,7 +59,7 @@ dotnet run --project SunflowSharp.Gui/SunflowSharp.Gui.csproj
 
 - **SunflowSharp**: Core rendering engine logic (Acceleration structures, Shaders, Geometry).
 - **SunflowSharp.FreeImage**: High-performance image saving/loading backend.
-- **SunflowSharp.Gui**: Windows-based interactive preview tool.
+- **SunflowSharp.Gui**: WinUI 3 interactive preview tool for Windows.
 - **SunflowSharp.Test**: Command-line interface for batch rendering and testing.
 
 ## ⚖ License
