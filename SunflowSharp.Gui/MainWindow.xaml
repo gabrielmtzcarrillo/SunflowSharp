@@ -18,7 +18,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TitleBar x:Name="AppTitleBar" Title="SunflowSharp GUI" />
+        <TitleBar
+            x:Name="AppTitleBar"
+            Background="#222222"
+            Foreground="#F5F5F5"
+            Title="SunflowSharp GUI" />
 
         <Grid Grid.Row="1" Padding="12" ColumnSpacing="12">
             <Grid.ColumnDefinitions>
@@ -43,12 +47,15 @@
         <Border
             Grid.Row="2"
             Margin="12,0,12,12"
-            Background="{ThemeResource LayerFillColorDefaultBrush}"
+            Background="#222222"
             BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
             BorderThickness="1"
             CornerRadius="8">
             <ScrollViewer
+                x:Name="PreviewScrollViewer"
+                HorizontalScrollMode="Enabled"
                 HorizontalScrollBarVisibility="Auto"
+                VerticalScrollMode="Enabled"
                 VerticalScrollBarVisibility="Auto"
                 ZoomMode="Disabled">
                 <Image
